@@ -5,20 +5,20 @@ import heroRetrato from "@/assets/giovanna-hero.png.asset.json";
 import logoTambani from "@/assets/logo-tambani.png.asset.json";
 import sobreRetrato from "@/assets/giovanna-sobre.png.asset.json";
 import {
-  Waves,
-  CloudRain,
-  Activity,
-  HeartHandshake,
-  Compass,
-  BatteryLow,
-  RefreshCw,
-  Brain,
-  Users,
-  Repeat,
+  Smile,
+  Scan,
+  Shield,
+  Star,
+  Check,
   Sparkles,
   ArrowUpRight,
   ArrowLeft,
   ArrowRight,
+  Stethoscope,
+  Calendar,
+  Heart,
+  AlignCenter,
+  Activity,
 } from "lucide-react";
 
 const SITE_URL = "https://clinicatambani.com.br";
@@ -28,35 +28,35 @@ const personLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": `${SITE_URL}/#giovanna`,
-  name: "Giovanna Francini",
-  jobTitle: "Psicóloga · Terapia Cognitivo-Comportamental",
+  name: "Dra. Giovanna Francini",
+  jobTitle: "Cirurgiã-Dentista · Ortodontista",
   url: SITE_URL,
   worksFor: { "@type": "Organization", name: "Clínica Tambani" },
   knowsAbout: [
-    "Terapia Cognitivo-Comportamental",
-    "Ansiedade",
-    "Depressão",
-    "Avaliação psicológica",
-    "Autoconhecimento",
+    "Ortodontia",
+    "Aparelho fixo",
+    "Aparelho removível",
+    "Alinhadores estéticos",
+    "Saúde bucal",
   ],
 };
 
 const faq = [
   {
-    q: "Como funciona a Terapia Cognitivo-Comportamental?",
-    a: "A TCC parte do princípio de que nossos pensamentos influenciam nossas emoções e comportamentos. Identificamos padrões de pensamento que causam sofrimento e desenvolvemos estratégias práticas para promover mudanças.",
+    q: "Qual a idade ideal para começar o tratamento ortodôntico?",
+    a: "A primeira avaliação ortodôntica pode ser feita a partir dos 7 anos. Para adultos, não há idade limite: é possível alinhar o sorriso em qualquer fase da vida.",
   },
   {
-    q: "Preciso estar em crise para começar a terapia?",
-    a: "Não. A terapia é para quem sofre, mas também para quem deseja se compreender melhor, desenvolver inteligência emocional e investir em qualidade de vida.",
+    q: "Quanto tempo dura um tratamento com aparelho?",
+    a: "O tempo varia conforme a complexidade do caso. Em média, pode durar de 12 a 36 meses. O acompanhamento regular e os cuidados em casa aceleram o resultado.",
   },
   {
-    q: "Quem pode ser atendido?",
-    a: "Atendo adolescentes, adultos e idosos. Cada fase da vida tem desafios específicos e a terapia oferece espaço seguro para compreendê-los.",
+    q: "A Clínica Tambani atende convênios ou particular?",
+    a: "Atendemos de forma particular. Entre em contato pelo WhatsApp para conhecer as formas de pagamento e condições especiais disponíveis.",
   },
   {
-    q: "Você realiza avaliações psicológicas?",
-    a: "Sim: concursos públicos, cirurgia bariátrica, laqueadura e vasectomia, sempre com responsabilidade técnica e ética profissional.",
+    q: "Como é a primeira consulta?",
+    a: "Na primeira consulta realizamos uma avaliação clínica, conversamos sobre suas necessidades e explicamos o plano de tratamento mais adequado para o seu sorriso.",
   },
 ];
 
@@ -73,17 +73,17 @@ const faqLd = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dra. Giovanna Francini — Psicóloga | Clínica Tambani" },
+      { title: "Dra. Giovanna Francini — Dentista & Ortodontista | Clínica Tambani" },
       {
         name: "description",
         content:
-          "Psicóloga na Clínica Tambani. Terapia Cognitivo-Comportamental e avaliação psicológica para adolescentes, adultos e idosos, com escuta ética e acolhedora.",
+          "Dra. Giovanna Francini, cirurgiã-dentista e ortodontista na Clínica Tambani. Ortodontia, aparelhos fixos, removíveis e alinhadores estéticos com tecnologia e cuidado.",
       },
-      { property: "og:title", content: "Dra. Giovanna Francini — Psicóloga | Clínica Tambani" },
+      { property: "og:title", content: "Dra. Giovanna Francini — Dentista & Ortodontista | Clínica Tambani" },
       {
         property: "og:description",
         content:
-          "Atendimento ético, acolhedor e baseado em evidências. Terapia Cognitivo-Comportamental e avaliações psicológicas.",
+          "Transforme seu sorriso com tratamento ortodôntico personalizado na Clínica Tambani.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -165,11 +165,9 @@ function Hero() {
       >
         <img
           src={heroRetrato.url}
-          alt="Dra. Giovanna Francini, psicóloga da Clínica Tambani"
+          alt="Dra. Giovanna Francini, cirurgiã-dentista e ortodontista da Clínica Tambani"
           className="h-full w-full object-cover object-[45%_center] md:object-[35%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/45 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-transparent to-deep/20" />
       </motion.div>
 
       <motion.div
@@ -179,59 +177,61 @@ function Hero() {
         animate="visible"
         className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-6xl flex-col justify-center px-6 py-24 md:px-10"
       >
-        <motion.img
-          variants={itemVariants}
-          src={logoTambani.url}
-          alt="Clínica Tambani"
-          className="mb-10 w-40 md:w-52"
-        />
+        <div className="max-w-xl">
+          <motion.img
+            variants={itemVariants}
+            src={logoTambani.url}
+            alt="Clínica Tambani"
+            className="mb-10 w-40 md:w-52"
+          />
 
-        <motion.p
-          variants={itemVariants}
-          className="mb-4 text-[0.7rem] uppercase tracking-[0.45em] text-gold"
-        >
-          Psicóloga
-        </motion.p>
-
-        <div className="overflow-hidden">
-          <motion.h1
-            variants={titleRevealVariants}
-            className="font-display text-5xl leading-[0.95] tracking-tight text-cream sm:text-6xl md:text-7xl"
+          <motion.p
+            variants={itemVariants}
+            className="mb-4 text-[0.7rem] uppercase tracking-[0.45em] text-gold"
           >
-            Giovanna
-            <span className="block text-gold">Francini</span>
-          </motion.h1>
+            Cirurgiã-Dentista · Ortodontista
+          </motion.p>
+
+          <div className="overflow-hidden">
+            <motion.h1
+              variants={titleRevealVariants}
+              className="font-display text-5xl leading-[0.95] tracking-tight text-cream sm:text-6xl md:text-7xl"
+            >
+              Giovanna
+              <span className="block text-gold">Francini</span>
+            </motion.h1>
+          </div>
+
+          <motion.p
+            variants={itemVariants}
+            className="mt-8 max-w-lg text-base font-light leading-relaxed text-cream/75 md:text-lg"
+          >
+            Cuidado odontológico e ortodôntico com tecnologia, estética e atenção individual.
+            Um sorriso alinhado e saudável para você viver com mais confiança.
+          </motion.p>
+
+          <motion.div variants={itemVariants} className="mt-10 flex flex-wrap items-center gap-5">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative inline-flex items-center gap-4 overflow-hidden rounded-full border border-gold/40 bg-gold/10 px-8 py-4 backdrop-blur-md transition duration-500 hover:border-gold hover:bg-gold/20"
+            >
+              <span className="font-display text-lg text-cream">Agende</span>
+              <span className="text-[0.65rem] uppercase tracking-[0.35em] text-gold">
+                sua consulta
+              </span>
+              <ArrowUpRight className="h-4 w-4 text-gold transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </a>
+
+            <a
+              href="#sobre"
+              className="inline-flex items-center gap-2 border-b border-cream/25 pb-1 text-sm text-cream/70 transition hover:border-gold hover:text-gold"
+            >
+              Conheça a clínica
+            </a>
+          </motion.div>
         </div>
-
-        <motion.p
-          variants={itemVariants}
-          className="mt-8 max-w-lg text-base font-light leading-relaxed text-cream/75 md:text-lg"
-        >
-          Terapia Cognitivo-Comportamental com escuta ética, acolhedora e baseada em evidências.
-          Um espaço seguro para você se reconectar consigo mesma e viver com mais equilíbrio.
-        </motion.p>
-
-        <motion.div variants={itemVariants} className="mt-10 flex flex-wrap items-center gap-5">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="group relative inline-flex items-center gap-4 overflow-hidden rounded-full border border-gold/40 bg-gold/10 px-8 py-4 backdrop-blur-md transition duration-500 hover:border-gold hover:bg-gold/20"
-          >
-            <span className="font-display text-lg text-cream">Agende</span>
-            <span className="text-[0.65rem] uppercase tracking-[0.35em] text-gold">
-              sua sessão
-            </span>
-            <ArrowUpRight className="h-4 w-4 text-gold transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
-          </a>
-
-          <a
-            href="#sobre"
-            className="inline-flex items-center gap-2 border-b border-cream/25 pb-1 text-sm text-cream/70 transition hover:border-gold hover:text-gold"
-          >
-            Conheça a abordagem
-          </a>
-        </motion.div>
       </motion.div>
 
       <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3">
@@ -258,11 +258,11 @@ function SectionHeader({ index, children }: { index: string; children: React.Rea
 }
 
 const itens = [
-  { icon: RefreshCw, b: "Vivendo no automático,", t: "sem tempo para cuidar de si." },
-  { icon: Brain, b: "Carregando culpa,", t: "sobrecarga e autocobrança." },
-  { icon: Users, b: "Dificuldade de se posicionar", t: "e estabelecer limites." },
-  { icon: Repeat, b: "Repetindo padrões familiares", t: "que não fazem mais sentido." },
-  { icon: Sparkles, b: "Se afastando de quem você é", t: "para atender expectativas externas." },
+  { icon: Smile, b: "Sorriso desalinhado", t: "ou dentes apinhados, que incomodam na foto e no dia a dia." },
+  { icon: AlignCenter, b: "Mordida cruzada", t: "ou aberta, causando desgaste e dificuldade ao mastigar." },
+  { icon: Activity, b: "Dores na mandíbula", t: "rangidos e tensão que afetam sono e qualidade de vida." },
+  { icon: Scan, b: "Insegurança com o sorriso", t: "que limita risos, fotos e interações sociais." },
+  { icon: Sparkles, b: "Desejo de um sorriso mais harmônico", t: "com planejamento moderno e estético." },
 ];
 
 function GanchoItem({ icon: Icon, b, t }: (typeof itens)[number]) {
@@ -283,7 +283,7 @@ function GanchoSection() {
   return (
     <section className="bg-cream px-6 py-24 font-sans md:px-10 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <SectionHeader index="01 — Reconhecimento">Você se sente assim?</SectionHeader>
+        <SectionHeader index="01 — Reconhecimento">Seu sorriso pede atenção?</SectionHeader>
 
         <motion.div
           variants={stagger}
@@ -304,9 +304,9 @@ function GanchoSection() {
           viewport={{ once: true }}
           className="mt-14 max-w-2xl text-lg leading-relaxed text-deep-soft"
         >
-          <span className="font-display text-deep">Você não precisa continuar nesse ciclo.</span>{" "}
-          A psicoterapia pode ser o espaço seguro para se reconectar consigo, entender suas emoções
-          e construir a vida que deseja, no seu tempo.
+          <span className="font-display text-deep">Você não precisa continuar incomodado.</span>{" "}
+          A ortodontia pode transformar sua saúde bucal, sua estética e a forma como você se sente
+          ao sorrir — no seu tempo e com acompanhamento próximo.
         </motion.p>
 
         <a
@@ -329,7 +329,7 @@ function SobreSection() {
   const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
   const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.12, 1.04, 1.12]);
 
-  const credenciais = ["Psicóloga clínica", "TCC · Avaliação psicológica", "Clínica Tambani"];
+  const credenciais = ["Cirurgiã-Dentista", "Especialista em Ortodontia", "Clínica Tambani"];
 
   return (
     <section id="sobre" ref={ref} className="relative overflow-hidden bg-deep font-sans">
@@ -339,7 +339,6 @@ function SobreSection() {
         alt="Dra. Giovanna Francini sentada, sorrindo"
         className="absolute inset-0 h-full w-full object-cover object-[75%_center]"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/90 to-deep/10" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-28 md:px-10 md:py-40">
         <motion.div
@@ -363,21 +362,22 @@ function SobreSection() {
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="mt-6 text-base leading-relaxed text-cream/75"
+            className="mt-6 text-base leading-relaxed text-cream/90"
           >
-            Sou psicóloga e dedico minha carreira a ajudar pessoas a compreenderem suas emoções e a
-            enfrentarem desafios com mais equilíbrio, dentro da Clínica Tambani.
+            Sou cirurgiã-dentista e ortodontista, dedicada a cuidar de sorrisos com técnica,
+            estética e escuta ativa. Na Clínica Tambani, cada paciente recebe um plano de
+            tratamento planejado para as suas necessidades.
           </motion.p>
-          <motion.p variants={fadeUp} className="mt-4 text-base leading-relaxed text-cream/75">
-            Atendimento ético, acolhedor e baseado em evidências — cada processo terapêutico é
-            construído de forma individual, no seu tempo.
+          <motion.p variants={fadeUp} className="mt-4 text-base leading-relaxed text-cream/90">
+            Atendimento ético, atualizado e acolhedor — para que você se sinta segura em todas as
+            etapas do seu processo ortodôntico.
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
             {credenciais.map((c) => (
               <span
                 key={c}
-                className="inline-flex items-center gap-2 rounded-full border border-gold/30 px-4 py-2 text-xs text-cream/80"
+                className="inline-flex items-center gap-2 rounded-full border border-gold/30 px-4 py-2 text-xs text-cream/90"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                 {c}
@@ -392,10 +392,10 @@ function SobreSection() {
 
 function AbordagemSection() {
   const beneficios = [
-    "Prática dentro da sua rotina",
-    "Foco em resultados sustentáveis",
-    "Acolhimento e escuta ativa",
-    "Abordagem baseada em evidências",
+    "Planejamento digital do tratamento",
+    "Acompanhamento próximo e humanizado",
+    "Tecnologia moderna e materiais estéticos",
+    "Resultados funcionais e harmônicos",
   ];
 
   return (
@@ -403,14 +403,14 @@ function AbordagemSection() {
       <div className="mx-auto grid max-w-6xl gap-14 md:grid-cols-2">
         <div>
           <p className="mb-4 text-[0.65rem] uppercase tracking-[0.4em] text-gold-deep">
-            Terapia Cognitivo-Comportamental
+            Ortodontia na Clínica Tambani
           </p>
           <h2 className="font-display text-3xl leading-tight text-deep md:text-4xl">
-            Uma abordagem prática, sensível e alinhada ao seu momento.
+            Uma abordagem moderna, estética e alinhada às suas necessidades.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-deep-soft">
-            Aqui a terapia é pensada para melhorar seu dia a dia, ajudando a transformar
-            comportamento, emoções e relações com clareza e respeito.
+            Cada sorriso é único. Por isso, combinamos diagnóstico preciso, tecnologia e atenção
+            individual para oferecer tratamentos ortodônticos confortáveis e resultados duradouros.
           </p>
         </div>
 
@@ -436,14 +436,14 @@ function AbordagemSection() {
   );
 }
 
-const avaliacoes = ["Concursos públicos", "Cirurgia bariátrica", "Laqueadura", "Vasectomia"];
+const avaliacoes = ["Avaliação ortodôntica", "Aparelho autoligado", "Aparelho estético", "Manutenção e contenção"];
 
 const beneficios = [
-  { b: "Clareza", t: "sobre o que sente e deseja." },
-  { b: "Leveza", t: "para lidar com os desafios diários." },
-  { b: "Posicionamento", t: "e limites saudáveis." },
-  { b: "Ressignificação de padrões", t: "que bloqueiam seu crescimento." },
-  { b: "Autoestima e confiança", t: "para decidir com segurança." },
+  { b: "Estética", t: "do sorriso e harmonia facial." },
+  { b: "Função mastigatória", t: "melhorada para uma alimentação saudável." },
+  { b: "Saúde bucal", t: "com higiene mais fácil e prevenção de desgastes." },
+  { b: "Autoestima", t: "para sorrir, falar e viver com mais confiança." },
+  { b: "Postura da mandíbula", t: "reduzindo tensões e desconfortos." },
 ];
 
 function BeneficiosSection() {
@@ -451,8 +451,8 @@ function BeneficiosSection() {
     <section className="bg-cream px-6 py-24 font-sans md:px-10 md:py-32">
       <div className="mx-auto max-w-6xl">
         <h2 className="max-w-2xl font-display text-3xl leading-tight text-deep md:text-5xl">
-          O que a psicoterapia pode
-          <span className="block text-gold-deep">transformar na sua vida.</span>
+          O que a ortodontia pode
+          <span className="block text-gold-deep">transformar no seu sorriso.</span>
         </h2>
         <p className="mt-6 text-[0.65rem] uppercase tracking-[0.4em] text-deep-soft">
           Lista de benefícios
@@ -484,49 +484,49 @@ function BeneficiosSection() {
 
 const servicos = [
   {
-    icon: HeartHandshake,
-    t: "Psicoterapia individual",
-    d: "Online e presencial. Um espaço seguro para compreender emoções, padrões e viver com mais equilíbrio.",
+    icon: Smile,
+    t: "Ortodontia individual",
+    d: "Avaliação, planejamento e tratamento personalizado para crianças, adolescentes e adultos.",
   },
   {
-    icon: Waves,
-    t: "Ansiedade",
-    d: "Preocupações que não cessam, tensão constante e sintomas físicos como taquicardia e insônia.",
+    icon: Stethoscope,
+    t: "Aparelho fixo",
+    d: "Correção de desalinhamentos, mordidas cruzadas e apinhamentos com acompanhamento regular.",
   },
   {
-    icon: CloudRain,
-    t: "Depressão",
-    d: "Perda de energia, desânimo persistente e dificuldade de sentir prazer no que antes fazia sentido.",
+    icon: Shield,
+    t: "Aparelho autoligado",
+    d: "Mais conforto, menos atritos e consultas mais rápidas durante o tratamento.",
   },
   {
-    icon: Activity,
-    t: "Transtornos do humor",
-    d: "Oscilações intensas entre tristeza e euforia que impactam a rotina, o sono e as relações.",
+    icon: Sparkles,
+    t: "Aparelho estético",
+    d: "Opções de bráquetes cerâmicos e alinhadores para discrição no tratamento.",
   },
   {
-    icon: Users,
-    t: "Orientação familiar",
-    d: "Apoio para melhorar a comunicação, fortalecer vínculos e atravessar desafios em conjunto.",
+    icon: Heart,
+    t: "Odontopediatria",
+    d: "Acompanhamento infantil para prevenir problemas e guiar o desenvolvimento dentofacial.",
   },
   {
-    icon: Compass,
-    t: "Autoconhecimento",
-    d: "Um espaço para compreender padrões e fazer escolhas mais alinhadas com você.",
+    icon: Check,
+    t: "Manutenção e contenção",
+    d: "Cuidados após a retirada do aparelho para manter o resultado a longo prazo.",
   },
   {
-    icon: BatteryLow,
-    t: "Estresse e esgotamento",
-    d: "Cansaço que não passa, sobrecarga e sinais de burnout no trabalho e na vida pessoal.",
+    icon: Calendar,
+    t: "Consulta de avaliação",
+    d: "Exame clínico, discussão das queixas e apresentação do plano de tratamento ideal.",
   },
   {
-    icon: Brain,
-    t: "Avaliação psicológica",
-    d: "Laudos para concursos, cirurgia bariátrica, laqueadura e vasectomia, com rigor técnico.",
+    icon: Scan,
+    t: "Documentação digital",
+    d: "Radiografias, fotografias e modelos digitais para planejamento preciso.",
   },
   {
-    icon: Repeat,
-    t: "Relacionamentos",
-    d: "Conflitos afetivos, familiares e dificuldades de comunicação que geram sofrimento recorrente.",
+    icon: Star,
+    t: "Harmonização do sorriso",
+    d: "Planejamento estético para equilibrar dentes, gengiva e proporções do sorriso.",
   },
 ];
 
@@ -546,7 +546,7 @@ function ServicosSection() {
           Serviços oferecidos
         </h2>
         <p className="mt-4 max-w-xl text-base text-deep-soft">
-          Apoio para ansiedade, depressão, relacionamentos, autoconhecimento e mais.
+          Ortodontia, aparelhos fixos, estéticos, autoligados, acompanhamento infantil e muito mais.
         </p>
 
         <div className="mt-8 flex gap-3">
@@ -592,7 +592,7 @@ function ServicosSection() {
 
         <div className="mt-14 rounded-3xl border border-deep/10 bg-white/70 p-8">
           <p className="text-[0.65rem] uppercase tracking-[0.4em] text-gold-deep">
-            Avaliações psicológicas
+            Outras especialidades
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             {avaliacoes.map((a) => (
@@ -605,7 +605,7 @@ function ServicosSection() {
             ))}
           </div>
           <p className="mt-6 text-sm text-deep-soft">
-            Atendimento para adolescentes, adultos e idosos.
+            Atendimento para crianças, adolescentes, adultos e idosos.
           </p>
         </div>
       </div>
@@ -618,7 +618,7 @@ function FAQSection() {
     <section className="bg-cream px-6 py-24 font-sans md:px-10 md:py-32">
       <div className="mx-auto max-w-4xl">
         <h2 className="font-display text-3xl leading-tight text-deep md:text-5xl">
-          Antes da primeira sessão.
+          Antes da primeira consulta.
         </h2>
 
         <div className="mt-12 divide-y divide-deep/10 border-y border-deep/10">
@@ -652,13 +652,13 @@ function CTASection() {
           Meu compromisso com você
         </p>
         <h2 className="mt-6 font-display text-3xl leading-tight text-cream md:text-5xl">
-          A psicoterapia é um
+          A ortodontia é um
           <span className="block text-gold">processo de transformação.</span>
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream/70">
-          Meu objetivo é caminhar ao seu lado para que você compreenda melhor suas emoções,
-          desenvolva novas formas de enfrentar os desafios da vida e alcance mais qualidade de
-          vida. Se deseja iniciar esse processo, será um prazer acolher você.
+          Meu objetivo é cuidar do seu sorriso com técnica, estética e respeito, para que você
+          sinta mais saúde, confiança e bem-estar em cada etapa. Se deseja iniciar esse processo,
+          será um prazer recebê-lo.
         </p>
         <a
           href={WHATSAPP_URL}
@@ -666,11 +666,11 @@ function CTASection() {
           rel="noreferrer"
           className="mt-10 inline-flex items-center gap-3 rounded-full border border-gold/40 bg-gold/10 px-8 py-4 text-cream transition hover:border-gold hover:bg-gold/20"
         >
-          Agendar sessão
+          Agendar consulta
           <ArrowUpRight className="h-4 w-4 text-gold" />
         </a>
         <p className="mt-10 text-xs uppercase tracking-[0.3em] text-cream/45">
-          — Dra. Giovanna Francini · Psicóloga · Clínica Tambani
+          — Dra. Giovanna Francini · Cirurgiã-Dentista · Ortodontista · Clínica Tambani
         </p>
       </div>
     </section>
