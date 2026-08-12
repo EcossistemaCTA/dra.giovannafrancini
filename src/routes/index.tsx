@@ -198,7 +198,7 @@ function Hero() {
               className="font-display text-5xl leading-[0.95] tracking-tight text-cream sm:text-6xl md:text-7xl"
             >
               Giovanna
-              <span className="block text-gold">Francini</span>
+              <span className="block text-cream">Francini</span>
             </motion.h1>
           </div>
 
@@ -215,13 +215,11 @@ function Hero() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer"
-              className="group relative inline-flex items-center gap-4 overflow-hidden rounded-full border border-gold/40 bg-gold/10 px-8 py-4 backdrop-blur-md transition duration-500 hover:border-gold hover:bg-gold/20"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gold px-8 py-4 text-deep shadow-lg shadow-gold/20 transition duration-500 hover:bg-cream hover:text-deep hover:shadow-xl hover:shadow-gold/30"
             >
-              <span className="font-display text-lg text-cream">Agende</span>
-              <span className="text-[0.65rem] uppercase tracking-[0.35em] text-gold">
-                sua consulta
-              </span>
-              <ArrowUpRight className="h-4 w-4 text-gold transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+              <Calendar className="h-5 w-5 transition-transform duration-500 group-hover:scale-110" />
+              <span className="font-display text-lg font-medium">Agendar consulta</span>
+              <ArrowUpRight className="h-5 w-5 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
             </a>
 
             <a
@@ -332,7 +330,11 @@ function SobreSection() {
   const credenciais = ["Cirurgiã-Dentista", "Especialista em Ortodontia", "Clínica Tambani"];
 
   return (
-    <section id="sobre" ref={ref} className="relative overflow-hidden bg-deep font-sans">
+    <section
+      id="sobre"
+      ref={ref}
+      className="relative min-h-[110svh] overflow-hidden bg-deep font-sans"
+    >
       <motion.img
         style={{ y: imageY, scale: imageScale }}
         src={sobreRetrato.url}
@@ -340,7 +342,7 @@ function SobreSection() {
         className="absolute inset-0 h-full w-full object-cover object-[75%_center]"
       />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 py-28 md:px-10 md:py-40">
+      <div className="relative z-10 mx-auto flex min-h-[110svh] max-w-6xl items-center px-6 py-28 md:px-10 md:py-40">
         <motion.div
           variants={stagger}
           initial="hidden"
