@@ -377,7 +377,7 @@ function SobreSection() {
             {credenciais.map((c) => (
               <span
                 key={c}
-                className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-deep/20 px-4 py-2 text-xs text-cream/90"
+                className="inline-flex items-center gap-2 rounded-full border border-gold/30 px-4 py-2 text-xs text-cream/90"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                 {c}
