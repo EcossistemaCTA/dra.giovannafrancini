@@ -346,7 +346,7 @@ function SobreSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="max-w-xl rounded-3xl bg-deep/70 p-8 backdrop-blur-md md:p-10"
+          className="max-w-xl"
         >
           <motion.p
             variants={fadeUp}
@@ -362,13 +362,13 @@ function SobreSection() {
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="mt-6 text-base leading-relaxed text-cream/75"
+            className="mt-6 text-base leading-relaxed text-cream/90"
           >
             Sou cirurgiã-dentista e ortodontista, dedicada a cuidar de sorrisos com técnica,
             estética e escuta ativa. Na Clínica Tambani, cada paciente recebe um plano de
             tratamento planejado para as suas necessidades.
           </motion.p>
-          <motion.p variants={fadeUp} className="mt-4 text-base leading-relaxed text-cream/75">
+          <motion.p variants={fadeUp} className="mt-4 text-base leading-relaxed text-cream/90">
             Atendimento ético, atualizado e acolhedor — para que você se sinta segura em todas as
             etapas do seu processo ortodôntico.
           </motion.p>
@@ -377,7 +377,7 @@ function SobreSection() {
             {credenciais.map((c) => (
               <span
                 key={c}
-                className="inline-flex items-center gap-2 rounded-full border border-gold/30 px-4 py-2 text-xs text-cream/80"
+                className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-deep/20 px-4 py-2 text-xs text-cream/90"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                 {c}
