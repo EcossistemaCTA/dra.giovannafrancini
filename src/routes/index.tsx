@@ -166,10 +166,10 @@ function Hero() {
         <img
           src={heroRetrato.url}
           alt="Dra. Giovanna Francini, psicóloga da Clínica Tambani"
-          className="h-full w-full object-cover object-[62%_center] md:object-[55%_center]"
+          className="h-full w-full object-cover object-[45%_center] md:object-[35%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep/80 via-transparent to-deep/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-transparent to-deep/20" />
       </motion.div>
 
       <motion.div
