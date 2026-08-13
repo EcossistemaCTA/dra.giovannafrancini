@@ -655,16 +655,15 @@ function CTASection() {
     <section className="bg-deep px-6 py-24 font-sans md:px-10 md:py-32">
       <div className="mx-auto max-w-3xl text-center">
         <p className="text-[0.65rem] uppercase tracking-[0.4em] text-gold">
-          Meu compromisso com você
+          Meu compromisso
         </p>
         <h2 className="mt-6 font-display text-3xl leading-tight text-cream md:text-5xl">
-          A ortodontia é um
-          <span className="block text-gold">processo de transformação.</span>
+          Que você termine o tratamento
+          <span className="block text-gold">mais confiante e feliz consigo.</span>
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream/70">
-          Meu objetivo é cuidar do seu sorriso com técnica, estética e respeito, para que você
-          sinta mais saúde, confiança e bem-estar em cada etapa. Se deseja iniciar esse processo,
-          será um prazer recebê-lo.
+          Se algo no seu sorriso te incomoda, vamos conversar. Na avaliação eu entendo o seu caso e
+          te mostro, com clareza, o melhor caminho — sem promessas vazias.
         </p>
         <a
           href={WHATSAPP_URL}
