@@ -5,6 +5,7 @@ import heroRetrato from "@/assets/giovanna-hero.png.asset.json";
 import logoTambani from "@/assets/logo-tambani.png.asset.json";
 import sobreRetrato from "@/assets/giovanna-sobre.png.asset.json";
 import AppleCardsCarouselDemo from "@/components/ui/apple-cards-carousel-demo";
+import FAQSections from "@/components/ui/faq-sections";
 import {
   Smile,
   Scan,
@@ -542,34 +543,7 @@ function ServicosSection() {
 }
 
 function FAQSection() {
-  return (
-    <section className="bg-cream px-6 py-24 font-sans md:px-10 md:py-32">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="font-display text-3xl leading-tight text-deep md:text-5xl">
-          Antes da primeira consulta.
-        </h2>
-
-        <div className="mt-12 divide-y divide-deep/10 border-y border-deep/10">
-          {faq.map((f, idx) => (
-            <details key={f.q} className="group py-6">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6">
-                <span className="flex items-start gap-4 font-display text-lg text-deep md:text-xl">
-                  <span className="text-sm text-gold-deep">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  {f.q}
-                </span>
-                <span className="text-2xl text-gold-deep transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 max-w-2xl pl-9 text-sm leading-relaxed text-deep-soft">{f.a}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return <FAQSections items={faq.map((f) => ({ question: f.q, answer: f.a }))} />;
 }
 
 function CTASection() {
