@@ -257,11 +257,11 @@ function SectionHeader({ index, children }: { index: string; children: React.Rea
 }
 
 const itens = [
-  { icon: Smile, b: "Sorriso desalinhado", t: "ou dentes apinhados, que incomodam na foto e no dia a dia." },
-  { icon: AlignCenter, b: "Mordida cruzada", t: "ou aberta, causando desgaste e dificuldade ao mastigar." },
-  { icon: Activity, b: "Dores na mandíbula", t: "rangidos e tensão que afetam sono e qualidade de vida." },
-  { icon: Scan, b: "Insegurança com o sorriso", t: "que limita risos, fotos e interações sociais." },
-  { icon: Sparkles, b: "Desejo de um sorriso mais harmônico", t: "com planejamento moderno e estético." },
+  { icon: Smile, b: "Dentes desalinhados", t: "ou apinhados, por falta de espaço." },
+  { icon: AlignCenter, b: "Problemas de mordida", t: "que afetam mastigação e desgaste dos dentes." },
+  { icon: Activity, b: "Alterações no desenvolvimento", t: "em crianças e adolescentes, que pedem intervenção no tempo certo." },
+  { icon: Scan, b: "Vergonha de sorrir", t: "em fotos, conversas e no dia a dia." },
+  { icon: Sparkles, b: "Vontade de mudar", t: "mas sem saber qual tratamento é o certo para o seu caso." },
 ];
 
 function GanchoItem({ icon: Icon, b, t }: (typeof itens)[number]) {
@@ -282,7 +282,9 @@ function GanchoSection() {
   return (
     <section className="bg-cream px-6 py-24 font-sans md:px-10 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <SectionHeader index="01 — Reconhecimento">Seu sorriso pede atenção?</SectionHeader>
+        <SectionHeader index="01 — Reconhecimento">
+          Algo no seu sorriso te incomoda?
+        </SectionHeader>
 
         <motion.div
           variants={stagger}
@@ -303,9 +305,9 @@ function GanchoSection() {
           viewport={{ once: true }}
           className="mt-14 max-w-2xl text-lg leading-relaxed text-deep-soft"
         >
-          <span className="font-display text-deep">Você não precisa continuar incomodado.</span>{" "}
-          A ortodontia pode transformar sua saúde bucal, sua estética e a forma como você se sente
-          ao sorrir — no seu tempo e com acompanhamento próximo.
+          <span className="font-display text-deep">Quase sempre existe algo maior por trás.</span>{" "}
+          Não é só sobre dentes alinhados: é sobre voltar a se sentir seguro para sorrir, falar e
+          se relacionar. E isso começa com um diagnóstico bem feito.
         </motion.p>
 
         <a
@@ -314,7 +316,7 @@ function GanchoSection() {
           rel="noreferrer"
           className="mt-8 inline-flex items-center gap-2 rounded-full bg-deep px-7 py-3.5 text-sm text-cream transition hover:bg-deep-soft"
         >
-          Quero entender como funciona
+          Quero avaliar meu caso
           <ArrowUpRight className="h-4 w-4 text-gold" />
         </a>
       </div>
