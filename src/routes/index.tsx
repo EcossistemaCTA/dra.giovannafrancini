@@ -35,28 +35,29 @@ const personLd = {
   knowsAbout: [
     "Ortodontia",
     "Aparelho fixo",
-    "Aparelho removível",
-    "Alinhadores estéticos",
-    "Saúde bucal",
+    "Aparelho ortopédico",
+    "Alinhadores transparentes",
+    "Ortodontia interceptiva",
+    "Odontologia Legal",
   ],
 };
 
 const faq = [
   {
-    q: "Qual a idade ideal para começar o tratamento ortodôntico?",
-    a: "A primeira avaliação ortodôntica pode ser feita a partir dos 7 anos. Para adultos, não há idade limite: é possível alinhar o sorriso em qualquer fase da vida.",
+    q: "Qual a idade ideal para começar o tratamento?",
+    a: "A primeira avaliação pode ser feita a partir dos 7 anos, quando é possível interceptar alterações do desenvolvimento. Para adultos não há idade limite: dá para alinhar o sorriso em qualquer fase da vida.",
   },
   {
-    q: "Quanto tempo dura um tratamento com aparelho?",
-    a: "O tempo varia conforme a complexidade do caso. Em média, pode durar de 12 a 36 meses. O acompanhamento regular e os cuidados em casa aceleram o resultado.",
+    q: "Alinhador transparente serve para o meu caso?",
+    a: "Depende do diagnóstico. Na avaliação eu analiso mordida, espaço e objetivos, e indico entre aparelho fixo, ortopédico ou alinhador — sempre o que realmente faz sentido para você.",
   },
   {
-    q: "A Clínica Tambani atende convênios ou particular?",
-    a: "Atendemos de forma particular. Entre em contato pelo WhatsApp para conhecer as formas de pagamento e condições especiais disponíveis.",
+    q: "Quanto tempo dura o tratamento?",
+    a: "Varia com a complexidade do caso, em média de 12 a 36 meses. Você recebe o planejamento com as etapas explicadas de forma clara desde o início.",
   },
   {
     q: "Como é a primeira consulta?",
-    a: "Na primeira consulta realizamos uma avaliação clínica, conversamos sobre suas necessidades e explicamos o plano de tratamento mais adequado para o seu sorriso.",
+    a: "Conversamos sobre o que te incomoda, faço a avaliação clínica e apresento o plano de tratamento individualizado, com etapas, prazos e valores de forma transparente.",
   },
 ];
 
