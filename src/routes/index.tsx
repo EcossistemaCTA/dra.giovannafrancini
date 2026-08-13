@@ -403,10 +403,10 @@ function SobreSection() {
 
 function AbordagemSection() {
   const beneficios = [
-    "Planejamento digital do tratamento",
-    "Acompanhamento próximo e humanizado",
-    "Tecnologia moderna e materiais estéticos",
-    "Resultados funcionais e harmônicos",
+    "Diagnóstico e planejamento individualizado",
+    "Cada etapa explicada de forma clara",
+    "Atualização constante em novas tecnologias",
+    "Indicação honesta: só o tratamento que faz sentido",
   ];
 
   return (
@@ -414,14 +414,15 @@ function AbordagemSection() {
       <div className="mx-auto grid max-w-6xl gap-14 md:grid-cols-2">
         <div>
           <p className="mb-4 text-[0.65rem] uppercase tracking-[0.4em] text-gold-deep">
-            Ortodontia na Clínica Tambani
+            Como eu trabalho
           </p>
           <h2 className="font-display text-3xl leading-tight text-deep md:text-4xl">
-            Uma abordagem moderna, estética e alinhada às suas necessidades.
+            Tratamento planejado, humanizado e feito para o seu caso.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-deep-soft">
-            Cada sorriso é único. Por isso, combinamos diagnóstico preciso, tecnologia e atenção
-            individual para oferecer tratamentos ortodônticos confortáveis e resultados duradouros.
+            Ética, responsabilidade, transparência, respeito e humanização são inegociáveis no meu
+            atendimento. Antes de indicar qualquer aparelho, eu entendo o que você busca e explico
+            o porquê de cada escolha.
           </p>
         </div>
 
