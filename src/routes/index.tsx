@@ -548,31 +548,27 @@ function FAQSection() {
 
 function CTASection() {
   return (
-    <section className="bg-deep px-6 py-24 font-sans md:px-10 md:py-32">
-      <div className="mx-auto max-w-3xl text-center">
-        <p className="text-[0.65rem] uppercase tracking-[0.4em] text-gold">
-          Meu compromisso
-        </p>
-        <h2 className="mt-6 font-display text-3xl leading-tight text-cream md:text-5xl">
-          Que você termine o tratamento
-          <span className="block text-gold">mais confiante e feliz consigo.</span>
-        </h2>
-        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream/70">
-          Se algo no seu sorriso te incomoda, vamos conversar. Na avaliação eu entendo o seu caso e
-          te mostro, com clareza, o melhor caminho — sem promessas vazias.
-        </p>
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-10 inline-flex items-center gap-3 rounded-full border border-gold/40 bg-gold/10 px-8 py-4 text-cream transition hover:border-gold hover:bg-gold/20"
-        >
-          Agendar consulta
-          <ArrowUpRight className="h-4 w-4 text-gold" />
-        </a>
-        <p className="mt-10 text-xs uppercase tracking-[0.3em] text-cream/45">
-          — Dra. Giovanna Francini · Cirurgiã-Dentista · Ortodontista · Clínica Tambani
-        </p>
+    <section className="relative overflow-hidden bg-deep px-6 py-24 font-sans md:px-10 md:py-32">
+      <img
+        src="/DRACTA.png"
+        alt="Dra. Giovanna Francini em atendimento"
+        className="absolute inset-[-4%_0_-10%_0] h-[120%] w-full object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/50" />
+
+      <div className="relative z-10 mx-auto flex min-h-[420px] max-w-3xl items-end justify-center py-16 text-center md:min-h-[520px] md:py-24">
+        <div className="max-w-md">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-3 rounded-full border border-gold/40 bg-gold/10 px-8 py-4 text-white transition hover:border-gold hover:bg-gold/20"
+          >
+            Agendar consulta
+            <ArrowUpRight className="h-4 w-4 text-gold" />
+          </a>
+        </div>
       </div>
     </section>
   );
