@@ -72,7 +72,6 @@ const data: CarouselItem[] = [
   {
     category: "Diagnóstico",
     title: "Plano individualizado",
-    src: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200&auto=format&fit=crop",
     content: treatmentContent(
       "Planejamento ortodôntico",
       "Análise clínica e documental para que cada decisão seja baseada em diagnóstico, objetivos e conforto do paciente.",
@@ -83,10 +82,10 @@ const data: CarouselItem[] = [
       ],
     ),
   },
+
   {
     category: "Interceptação",
     title: "Tempo certo",
-    src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop",
     content: treatmentContent(
       "Ortodontia interceptiva",
       "Intervenção estratégica na infância e adolescência para prevenir problemas maiores, com mais qualidade de vida e menos complexidade no futuro.",
@@ -97,10 +96,10 @@ const data: CarouselItem[] = [
       ],
     ),
   },
+
   {
     category: "Manutenção",
     title: "Resultado estável",
-    src: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop",
     content: treatmentContent(
       "Acompanhamento e contenção",
       "Cuidados de manutenção para preservar o resultado final, garantir estabilidade e manter o sorriso saudável a longo prazo.",
@@ -111,6 +110,7 @@ const data: CarouselItem[] = [
       ],
     ),
   },
+
 ];
 
 export default function AppleCardsCarouselDemo() {
