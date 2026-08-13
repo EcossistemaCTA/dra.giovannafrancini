@@ -185,7 +185,7 @@ export const Card = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
-              layoutId={layout ? `card-${card.title}` : undefined}
+              {...(layout ? { layoutId: `card-${card.title}` } : {})}
               className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-[2rem] bg-white p-4 font-sans md:p-10"
             >
               <button
@@ -198,14 +198,14 @@ export const Card = ({
               </button>
 
               <motion.p
-                layoutId={layout ? `category-${card.title}` : undefined}
+                {...(layout ? { layoutId: `category-${card.title}` } : {})}
                 className="text-base font-medium text-deep"
               >
                 {card.category}
               </motion.p>
 
               <motion.h3
-                layoutId={layout ? `title-${card.title}` : undefined}
+                {...(layout ? { layoutId: `title-${card.title}` } : {})}
                 className="mt-4 text-2xl font-semibold text-deep md:text-5xl"
               >
                 {card.title}
@@ -218,7 +218,7 @@ export const Card = ({
       </AnimatePresence>
 
       <motion.button
-        layoutId={layout ? `card-${card.title}` : undefined}
+        {...(layout ? { layoutId: `card-${card.title}` } : {})}
         onClick={handleOpen}
         type="button"
         className="group relative z-10 flex h-72 w-64 flex-col items-start justify-end overflow-hidden rounded-[2rem] bg-deep shadow-[0_25px_60px_rgba(14,32,42,0.18)] transition duration-300 hover:-translate-y-1 md:h-[38rem] md:w-[23rem]"
@@ -227,13 +227,13 @@ export const Card = ({
 
         <div className="relative z-20 p-6 md:p-8">
           <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
+            {...(layout ? { layoutId: `category-${card.category}` } : {})}
             className="text-left text-xs font-medium uppercase tracking-[0.25em] text-cream/80 md:text-sm"
           >
             {card.category}
           </motion.p>
           <motion.h3
-            layoutId={layout ? `title-${card.title}` : undefined}
+            {...(layout ? { layoutId: `title-${card.title}` } : {})}
             className="mt-3 max-w-[16rem] text-left font-display text-2xl text-white md:text-4xl"
           >
             {card.title}
