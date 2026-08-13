@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import heroRetrato from "@/assets/giovanna-hero.png.asset.json";
 import logoTambani from "@/assets/logo-tambani.png.asset.json";
 import sobreRetrato from "@/assets/giovanna-sobre.png.asset.json";
+import AppleCardsCarouselDemo from "@/components/ui/apple-cards-carousel-demo";
 import {
   Smile,
   Scan,
@@ -537,86 +538,7 @@ const servicos = [
 ];
 
 function ServicosSection() {
-  const scrollerRef = useRef<HTMLDivElement>(null);
-
-  const scrollCards = (direction: number) => {
-    if (!scrollerRef.current) return;
-    const cardWidth = scrollerRef.current.firstElementChild?.clientWidth ?? 320;
-    scrollerRef.current.scrollBy({ left: direction * (cardWidth + 24), behavior: "smooth" });
-  };
-
-  return (
-    <section className="bg-sand px-6 py-24 font-sans md:px-10 md:py-32">
-      <div className="mx-auto max-w-6xl">
-        <h2 className="font-display text-3xl leading-tight text-deep md:text-5xl">
-          Tratamentos
-        </h2>
-        <p className="mt-4 max-w-xl text-base text-deep-soft">
-          Ortodontia para crianças, adolescentes e adultos — do diagnóstico à contenção final.
-        </p>
-
-        <div className="mt-8 flex gap-3">
-          <button
-            type="button"
-            onClick={() => scrollCards(-1)}
-            aria-label="Ver cards anteriores"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-deep/10 bg-white text-deep shadow-sm transition hover:-translate-y-0.5 hover:border-gold/40 hover:text-gold-deep"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollCards(1)}
-            aria-label="Ver próximos cards"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-deep/10 bg-white text-deep shadow-sm transition hover:-translate-y-0.5 hover:border-gold/40 hover:text-gold-deep"
-          >
-            <ArrowRight className="h-4 w-4" />
-          </button>
-        </div>
-
-        <div
-          ref={scrollerRef}
-          className="mt-8 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
-          {servicos.map(({ icon: Icon, t, d }) => (
-            <article
-              key={t}
-              className="w-[300px] shrink-0 snap-start rounded-3xl border border-deep/10 bg-white p-8 transition hover:-translate-y-1 hover:border-gold/40 sm:w-[340px]"
-            >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-cream text-gold-deep">
-                <Icon className="h-5 w-5" />
-              </span>
-              <h3 className="mt-6 font-display text-xl text-deep">{t}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-deep-soft">{d}</p>
-              <span className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-gold-deep">
-                Saber mais
-                <ArrowUpRight className="h-3.5 w-3.5" />
-              </span>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-14 rounded-3xl border border-deep/10 bg-white/70 p-8">
-          <p className="text-[0.65rem] uppercase tracking-[0.4em] text-gold-deep">
-            Também atuo em
-          </p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            {avaliacoes.map((a) => (
-              <span
-                key={a}
-                className="rounded-full border border-deep/10 px-4 py-2 text-sm text-deep"
-              >
-                {a}
-              </span>
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-deep-soft">
-            Atendimento individualizado para todas as idades, na Clínica Tambani.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
+  return <AppleCardsCarouselDemo />;
 }
 
 function FAQSection() {
