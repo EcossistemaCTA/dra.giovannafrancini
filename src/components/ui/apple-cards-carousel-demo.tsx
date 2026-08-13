@@ -86,7 +86,6 @@ const data: CarouselItem[] = [
   {
     category: "Interceptação",
     title: "Tempo certo",
-    src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop",
     content: treatmentContent(
       "Ortodontia interceptiva",
       "Intervenção estratégica na infância e adolescência para prevenir problemas maiores, com mais qualidade de vida e menos complexidade no futuro.",
@@ -97,6 +96,7 @@ const data: CarouselItem[] = [
       ],
     ),
   },
+
   {
     category: "Manutenção",
     title: "Resultado estável",
