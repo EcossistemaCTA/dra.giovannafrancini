@@ -448,14 +448,20 @@ function AbordagemSection() {
   );
 }
 
-const avaliacoes = ["Avaliação ortodôntica", "Aparelho autoligado", "Aparelho estético", "Manutenção e contenção"];
+const avaliacoes = [
+  "Ortodontia interceptiva",
+  "Planejamento ortodôntico",
+  "Manutenção e contenção",
+  "Clínica geral",
+  "Odontologia Legal",
+];
 
 const beneficios = [
-  { b: "Estética", t: "do sorriso e harmonia facial." },
-  { b: "Função mastigatória", t: "melhorada para uma alimentação saudável." },
-  { b: "Saúde bucal", t: "com higiene mais fácil e prevenção de desgastes." },
-  { b: "Autoestima", t: "para sorrir, falar e viver com mais confiança." },
-  { b: "Postura da mandíbula", t: "reduzindo tensões e desconfortos." },
+  { b: "Saúde", t: "mordida equilibrada e prevenção de desgastes e problemas futuros." },
+  { b: "Função", t: "mastigação e fala mais confortáveis no dia a dia." },
+  { b: "Estética", t: "harmonia entre dentes, sorriso e rosto." },
+  { b: "Conforto", t: "tratamento no seu ritmo, com etapas previsíveis." },
+  { b: "Confiança", t: "para sorrir, falar e se relacionar sem se esconder." },
 ];
 
 function BeneficiosSection() {
@@ -463,11 +469,11 @@ function BeneficiosSection() {
     <section className="bg-cream px-6 py-24 font-sans md:px-10 md:py-32">
       <div className="mx-auto max-w-6xl">
         <h2 className="max-w-2xl font-display text-3xl leading-tight text-deep md:text-5xl">
-          O que a ortodontia pode
-          <span className="block text-gold-deep">transformar no seu sorriso.</span>
+          Muito mais do que
+          <span className="block text-gold-deep">uma mudança estética.</span>
         </h2>
         <p className="mt-6 text-[0.65rem] uppercase tracking-[0.4em] text-deep-soft">
-          Lista de benefícios
+          O que você ganha
         </p>
 
         <motion.div
