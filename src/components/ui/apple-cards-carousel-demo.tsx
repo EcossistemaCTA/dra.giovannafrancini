@@ -100,7 +100,6 @@ const data: CarouselItem[] = [
   {
     category: "Manutenção",
     title: "Resultado estável",
-    src: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop",
     content: treatmentContent(
       "Acompanhamento e contenção",
       "Cuidados de manutenção para preservar o resultado final, garantir estabilidade e manter o sorriso saudável a longo prazo.",
@@ -111,6 +110,7 @@ const data: CarouselItem[] = [
       ],
     ),
   },
+
 ];
 
 export default function AppleCardsCarouselDemo() {
