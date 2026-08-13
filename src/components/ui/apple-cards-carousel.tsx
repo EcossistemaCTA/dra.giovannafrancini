@@ -14,11 +14,12 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type CarouselItem = {
-  src: string;
+  src?: string;
   title: string;
   category: string;
   content: ReactNode;
 };
+
 
 interface CarouselProps {
   items: ReactNode[];
@@ -221,9 +222,17 @@ export const Card = ({
         {...(layout ? { layoutId: `card-${card.title}` } : {})}
         onClick={handleOpen}
         type="button"
-        className="group relative z-10 flex h-72 w-64 flex-col items-start justify-end overflow-hidden rounded-[2rem] bg-deep shadow-[0_25px_60px_rgba(14,32,42,0.18)] transition duration-300 hover:-translate-y-1 md:h-[38rem] md:w-[23rem]"
+        className={cn(
+          "group relative z-10 flex h-72 w-64 flex-col items-start justify-end overflow-hidden rounded-[2rem] shadow-[0_25px_60px_rgba(14,32,42,0.18)] transition duration-300 hover:-translate-y-1 md:h-[38rem] md:w-[23rem]",
+          card.src ? "bg-deep" : "bg-[#2d2d2d]",
+        )}
       >
-        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-black/15 to-black/75" />
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-0 z-10",
+            card.src ? "bg-gradient-to-b from-black/20 via-black/15 to-black/75" : "bg-gradient-to-b from-black/10 via-black/5 to-black/40",
+          )}
+        />
 
         <div className="relative z-20 p-6 md:p-8">
           <motion.p
@@ -240,12 +249,15 @@ export const Card = ({
           </motion.h3>
         </div>
 
-        <img
-          src={card.src}
-          alt={card.title}
-          className="absolute inset-0 z-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-        />
+        {card.src && (
+          <img
+            src={card.src}
+            alt={card.title}
+            className="absolute inset-0 z-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        )}
       </motion.button>
+
     </>
   );
 };
