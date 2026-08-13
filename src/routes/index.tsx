@@ -74,17 +74,17 @@ const faqLd = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dra. Giovanna Francini — Dentista & Ortodontista | Clínica Tambani" },
+      { title: "Dra. Giovanna Francini — Ortodontia Personalizada | Clínica Tambani" },
       {
         name: "description",
         content:
-          "Dra. Giovanna Francini, cirurgiã-dentista e ortodontista na Clínica Tambani. Ortodontia, aparelhos fixos, removíveis e alinhadores estéticos com tecnologia e cuidado.",
+          "Cirurgiã-dentista e ortodontista na Clínica Tambani. Aparelhos fixos, ortopédicos e alinhadores transparentes com planejamento individualizado para crianças, adolescentes e adultos.",
       },
-      { property: "og:title", content: "Dra. Giovanna Francini — Dentista & Ortodontista | Clínica Tambani" },
+      { property: "og:title", content: "Dra. Giovanna Francini — Ortodontia Personalizada | Clínica Tambani" },
       {
         property: "og:description",
         content:
-          "Transforme seu sorriso com tratamento ortodôntico personalizado na Clínica Tambani.",
+          "Transformar sorrisos com planejamento, conhecimento e cuidado: saúde, confiança e autoestima.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
