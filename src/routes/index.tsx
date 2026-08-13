@@ -558,12 +558,19 @@ function CTASection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/50" />
 
       <div className="relative z-10 mx-auto flex min-h-[420px] max-w-3xl items-end justify-center py-16 text-center md:min-h-[520px] md:py-24">
-        <div className="max-w-md">
+        <div className="max-w-md space-y-4">
+          <p className="text-[0.65rem] uppercase tracking-[0.35em] text-gold/90">Seu sorriso merece cuidado</p>
+          <h2 className="font-display text-2xl leading-tight text-white md:text-3xl">
+            Comece pelo diagnóstico certo.
+          </h2>
+          <p className="text-sm leading-relaxed text-cream/80">
+            Avaliação clara, planejamento individual e sorriso com mais confiança.
+          </p>
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-3 rounded-full border border-gold/40 bg-gold/10 px-8 py-4 text-white transition hover:border-gold hover:bg-gold/20"
+            className="mt-2 inline-flex items-center gap-3 rounded-full border border-gold/40 bg-gold/10 px-8 py-4 text-white transition hover:border-gold hover:bg-gold/20"
           >
             Agendar consulta
             <ArrowUpRight className="h-4 w-4 text-gold" />
