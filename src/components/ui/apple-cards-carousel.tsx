@@ -14,11 +14,12 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type CarouselItem = {
-  src: string;
+  src?: string;
   title: string;
   category: string;
   content: ReactNode;
 };
+
 
 interface CarouselProps {
   items: ReactNode[];
