@@ -330,7 +330,12 @@ function SobreSection() {
   const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
   const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.12, 1.04, 1.12]);
 
-  const credenciais = ["Cirurgiã-Dentista", "Especialista em Ortodontia", "Clínica Tambani"];
+  const credenciais = [
+    "Cirurgiã-Dentista",
+    "Formação completa em Ortodontia",
+    "Especialista em Odontologia Legal",
+    "Clínica Tambani",
+  ];
 
   return (
     <section
@@ -369,13 +374,14 @@ function SobreSection() {
             variants={fadeUp}
             className="mt-6 text-base leading-relaxed text-cream/90"
           >
-            Sou cirurgiã-dentista e ortodontista, dedicada a cuidar de sorrisos com técnica,
-            estética e escuta ativa. Na Clínica Tambani, cada paciente recebe um plano de
-            tratamento planejado para as suas necessidades.
+            Sou cirurgiã-dentista com dedicação especial à Ortodontia. Escolhi essa profissão pela
+            possibilidade de cuidar da saúde e, ao mesmo tempo, transformar autoestima e qualidade
+            de vida.
           </motion.p>
           <motion.p variants={fadeUp} className="mt-4 text-base leading-relaxed text-cream/90">
-            Atendimento ético, atualizado e acolhedor — para que você se sinta segura em todas as
-            etapas do seu processo ortodôntico.
+            Meu diferencial está em unir conhecimento técnico, planejamento individualizado e
+            proximidade real com o paciente. Cada caso é único — e merece ser tratado como tal,
+            com ética, transparência e honestidade sobre o que faz sentido para você.
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
