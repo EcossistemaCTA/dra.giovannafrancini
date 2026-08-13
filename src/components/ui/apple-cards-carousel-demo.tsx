@@ -1,6 +1,8 @@
 "use client";
 
 import { Card, Carousel, type CarouselItem } from "@/components/ui/apple-cards-carousel";
+import aparelhoFixoImg from "@/assets/aparelho-fixo.png.asset.json";
+import alinhadoresImg from "@/assets/alinhadores.png.asset.json";
 
 const treatmentContent = (
   title: string,
@@ -28,7 +30,7 @@ const data: CarouselItem[] = [
   {
     category: "Aparelho fixo",
     title: "Sorriso alinhado",
-    src: "https://images.unsplash.com/photo-1588776814546-daed5f7a0f4e?q=80&w=1200&auto=format&fit=crop",
+    src: aparelhoFixoImg.url,
     content: treatmentContent(
       "Aparelho fixo",
       "Correção da mordida, do espaço e do alinhamento com acompanhamento firme e personalizado em cada etapa do tratamento.",
@@ -42,7 +44,7 @@ const data: CarouselItem[] = [
   {
     category: "Alinhadores",
     title: "Discrição e conforto",
-    src: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1200&auto=format&fit=crop",
+    src: alinhadoresImg.url,
     content: treatmentContent(
       "Alinhadores transparentes",
       "Uma alternativa discreta para quem busca conforto, estética e previsibilidade, com etapas claras do início ao fim.",
