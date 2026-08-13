@@ -503,48 +503,38 @@ function BeneficiosSection() {
 const servicos = [
   {
     icon: Smile,
-    t: "Ortodontia individual",
-    d: "Avaliação, planejamento e tratamento personalizado para crianças, adolescentes e adultos.",
-  },
-  {
-    icon: Stethoscope,
     t: "Aparelho fixo",
-    d: "Correção de desalinhamentos, mordidas cruzadas e apinhamentos com acompanhamento regular.",
-  },
-  {
-    icon: Shield,
-    t: "Aparelho autoligado",
-    d: "Mais conforto, menos atritos e consultas mais rápidas durante o tratamento.",
+    d: "Correção de apinhamento, falta de espaço e problemas de mordida com acompanhamento regular.",
   },
   {
     icon: Sparkles,
-    t: "Aparelho estético",
-    d: "Opções de bráquetes cerâmicos e alinhadores para discrição no tratamento.",
+    t: "Alinhadores transparentes",
+    d: "Discrição e conforto para quem quer alinhar o sorriso sem aparecer o aparelho.",
+  },
+  {
+    icon: Shield,
+    t: "Aparelho ortopédico",
+    d: "Guia o crescimento e corrige alterações de desenvolvimento em crianças e adolescentes.",
+  },
+  {
+    icon: Scan,
+    t: "Planejamento ortodôntico",
+    d: "Documentação, diagnóstico e plano de tratamento individualizado antes de qualquer aparelho.",
   },
   {
     icon: Heart,
-    t: "Odontopediatria",
-    d: "Acompanhamento infantil para prevenir problemas e guiar o desenvolvimento dentofacial.",
+    t: "Ortodontia interceptiva",
+    d: "Intervenção no momento certo da infância para evitar tratamentos mais complexos depois.",
   },
   {
     icon: Check,
-    t: "Manutenção e contenção",
-    d: "Cuidados após a retirada do aparelho para manter o resultado a longo prazo.",
+    t: "Acompanhamento e contenção",
+    d: "Manutenções e cuidado após o aparelho para manter o resultado a longo prazo.",
   },
   {
     icon: Calendar,
     t: "Consulta de avaliação",
-    d: "Exame clínico, discussão das queixas e apresentação do plano de tratamento ideal.",
-  },
-  {
-    icon: Scan,
-    t: "Documentação digital",
-    d: "Radiografias, fotografias e modelos digitais para planejamento preciso.",
-  },
-  {
-    icon: Star,
-    t: "Harmonização do sorriso",
-    d: "Planejamento estético para equilibrar dentes, gengiva e proporções do sorriso.",
+    d: "Escuta da sua queixa, exame clínico e apresentação clara do caminho de tratamento.",
   },
 ];
 
@@ -561,10 +551,10 @@ function ServicosSection() {
     <section className="bg-sand px-6 py-24 font-sans md:px-10 md:py-32">
       <div className="mx-auto max-w-6xl">
         <h2 className="font-display text-3xl leading-tight text-deep md:text-5xl">
-          Serviços oferecidos
+          Tratamentos
         </h2>
         <p className="mt-4 max-w-xl text-base text-deep-soft">
-          Ortodontia, aparelhos fixos, estéticos, autoligados, acompanhamento infantil e muito mais.
+          Ortodontia para crianças, adolescentes e adultos — do diagnóstico à contenção final.
         </p>
 
         <div className="mt-8 flex gap-3">
@@ -610,7 +600,7 @@ function ServicosSection() {
 
         <div className="mt-14 rounded-3xl border border-deep/10 bg-white/70 p-8">
           <p className="text-[0.65rem] uppercase tracking-[0.4em] text-gold-deep">
-            Outras especialidades
+            Também atuo em
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             {avaliacoes.map((a) => (
@@ -623,7 +613,7 @@ function ServicosSection() {
             ))}
           </div>
           <p className="mt-6 text-sm text-deep-soft">
-            Atendimento para crianças, adolescentes, adultos e idosos.
+            Atendimento individualizado para todas as idades, na Clínica Tambani.
           </p>
         </div>
       </div>
