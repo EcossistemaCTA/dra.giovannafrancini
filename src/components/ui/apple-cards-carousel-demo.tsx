@@ -58,7 +58,6 @@ const data: CarouselItem[] = [
   {
     category: "Ortopedista",
     title: "Crescimento guiado",
-    src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop",
     content: treatmentContent(
       "Aparelho ortopédico",
       "Atuação na fase de crescimento para orientar o desenvolvimento da arcada e reduzir a necessidade de intervenções mais complexas depois.",
@@ -69,6 +68,7 @@ const data: CarouselItem[] = [
       ],
     ),
   },
+
   {
     category: "Diagnóstico",
     title: "Plano individualizado",
