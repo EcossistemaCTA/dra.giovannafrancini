@@ -72,7 +72,6 @@ const data: CarouselItem[] = [
   {
     category: "Diagnóstico",
     title: "Plano individualizado",
-    src: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200&auto=format&fit=crop",
     content: treatmentContent(
       "Planejamento ortodôntico",
       "Análise clínica e documental para que cada decisão seja baseada em diagnóstico, objetivos e conforto do paciente.",
@@ -83,6 +82,7 @@ const data: CarouselItem[] = [
       ],
     ),
   },
+
   {
     category: "Interceptação",
     title: "Tempo certo",
