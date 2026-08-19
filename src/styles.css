@@ -71,8 +71,8 @@
 
 :root {
   --radius: 0.625rem;
-  --deep: oklch(0.28 0.045 210);
-  --deep-soft: oklch(0.38 0.045 210);
+  --deep: oklch(0.14 0.01 250);
+  --deep-soft: oklch(0.24 0.01 250);
   --gold: oklch(0.78 0.12 85);
   --gold-deep: oklch(0.62 0.11 78);
   --cream: oklch(0.98 0.008 90);

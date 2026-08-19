@@ -169,6 +169,9 @@ function Hero() {
           alt="Dra. Giovanna Francini, cirurgiã-dentista e ortodontista da Clínica Tambani"
           className="h-full w-full object-cover object-[45%_center] md:object-[35%_center]"
         />
+        {/* Sombra / degradê preto carvão profundo (#07080a) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07080a] via-[#07080a]/90 to-transparent pointer-events-none md:w-4/5" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07080a] via-transparent to-[#07080a]/40 pointer-events-none" />
       </motion.div>
 
       <motion.div
@@ -349,6 +352,9 @@ function SobreSection() {
         alt="Dra. Giovanna Francini sentada, sorrindo"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
+      {/* Sombra / degradê preto carvão profundo (#07080a) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#07080a] via-[#07080a]/90 to-transparent pointer-events-none md:w-4/5" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#07080a] via-transparent to-[#07080a]/40 pointer-events-none" />
 
       <div className="relative z-10 mx-auto flex min-h-[110svh] max-w-6xl items-center px-6 py-28 md:px-10 md:py-40">
         <motion.div
