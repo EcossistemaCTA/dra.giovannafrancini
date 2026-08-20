@@ -100,7 +100,7 @@ export const Route = createFileRoute("/")({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap",
       },
       { rel: "preload", as: "image", href: heroRetrato.url },
     ],
@@ -151,7 +151,7 @@ function Hero() {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: targetRef, offset: ["start start", "end start"] });
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const contentY = useTransform(scrollYProgress, [0, 0.5], ["0px", "-40px"]);
 
@@ -160,86 +160,103 @@ function Hero() {
       ref={targetRef}
       className="relative min-h-[100svh] overflow-hidden bg-deep font-sans text-cream"
     >
+      {/* Full Bleed Background Image */}
       <motion.div
-        style={{ y: backgroundY, scale: backgroundScale }}
-        className="absolute inset-0"
+        style={{ y: backgroundY }}
+        className="absolute inset-0 z-0 overflow-hidden"
       >
         <img
           src={heroRetrato.url}
-          alt="Dra. Giovanna Francini, cirurgiã-dentista e ortodontista da Clínica Tambani"
-          className="h-full w-full object-cover object-[45%_center] md:object-[35%_center]"
+          alt="Dra. Giovanna Francini"
+          className="h-full w-full object-cover object-[55%_center] md:object-[40%_center]"
         />
-        {/* Sombra / degradê preto carvão profundo (#07080a) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07080a] via-[#07080a]/90 to-transparent pointer-events-none md:w-4/5" />
+        {/* Sombra / degradê escuro focado na esquerda para leitura perfeita dos textos */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07080a] via-[#07080a]/90 via-50% to-transparent pointer-events-none md:w-[60%]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#07080a] via-transparent to-[#07080a]/40 pointer-events-none" />
+        {/* Degradê de fusão suave no rodapé do Hero */}
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#07080a] via-[#07080a]/85 to-transparent pointer-events-none z-10" />
       </motion.div>
 
+      {/* Header Navigation Bar */}
+      <header className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-6 py-8 md:px-12">
+        <div className="flex items-center gap-3">
+          <img src={logoTambani.url} alt="Clínica Tambani" className="h-16 w-auto object-contain md:h-24" />
+        </div>
+        <nav className="hidden items-center gap-8 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-cream/90 md:flex">
+          <a href="#sobre" className="transition hover:text-gold">Sobre</a>
+          <a href="#tratamentos" className="transition hover:text-gold">Especialidades</a>
+          <a href="#atendimento" className="transition hover:text-gold">Atendimento</a>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-cream/40 px-6 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-cream transition hover:border-gold hover:bg-gold hover:text-deep"
+          >
+            Contato
+          </a>
+        </nav>
+      </header>
+
+      {/* Hero Body Content */}
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-6xl flex-col justify-center px-6 py-24 md:px-10"
+        className="relative z-10 mx-auto flex min-h-[calc(100svh-120px)] max-w-7xl flex-col justify-center px-6 pb-20 pt-4 md:px-12"
       >
-        <div className="max-w-xl">
-          <motion.img
-            variants={itemVariants}
-            src={logoTambani.url}
-            alt="Clínica Tambani"
-            className="mb-10 w-40 md:w-52"
-          />
-
+        <div className="max-w-2xl">
           <motion.p
             variants={itemVariants}
-            className="mb-4 text-[0.7rem] uppercase tracking-[0.45em] text-gold"
+            className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-gold"
           >
-            Cirurgiã-Dentista · Ortodontista
+            ORTODONTIA — APARELHO FIXO — ALINHADORES
           </motion.p>
 
           <div className="overflow-hidden">
             <motion.h1
               variants={titleRevealVariants}
-              className="font-display text-5xl leading-[0.95] tracking-tight text-cream sm:text-6xl md:text-7xl"
+              className="font-display text-5xl font-normal leading-[1.05] tracking-tight text-cream sm:text-6xl md:text-7xl"
             >
-              Giovanna
-              <span className="block text-cream">Francini</span>
+              Dra. Giovanna
+              <span className="block font-normal italic text-gold">Francini</span>
             </motion.h1>
           </div>
 
           <motion.p
             variants={itemVariants}
-            className="mt-8 max-w-lg text-base font-light leading-relaxed text-cream/75 md:text-lg"
+            className="mt-6 max-w-lg text-sm leading-relaxed text-cream/80 md:text-base"
           >
-            Transformar sorrisos com planejamento, conhecimento e cuidado — proporcionando saúde,
-            confiança e autoestima.
+            Cirurgiã-dentista e ortodontista com especialização em alinhadores transparentes, aparelhos ortopédicos e diagnóstico individualizado.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="mt-10 flex flex-wrap items-center gap-5">
+          {/* Action Pills Row */}
+          <motion.div variants={itemVariants} className="mt-10 flex flex-wrap items-center gap-3">
+            <a
+              href="#sobre"
+              className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-deep shadow-md shadow-gold/20 transition hover:bg-cream hover:text-deep hover:shadow-lg"
+            >
+              Conheça a Giovanna
+            </a>
+
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gold px-8 py-4 text-deep shadow-lg shadow-gold/20 transition duration-500 hover:bg-cream hover:text-deep hover:shadow-xl hover:shadow-gold/30"
+              className="inline-flex items-center gap-2 rounded-full border border-cream/30 bg-black/30 px-6 py-3.5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-cream backdrop-blur-md transition hover:border-gold hover:bg-black/50 hover:text-gold"
             >
-              <Calendar className="h-5 w-5 transition-transform duration-500 group-hover:scale-110" />
-              <span className="font-display text-lg font-medium">Agendar consulta</span>
-              <ArrowUpRight className="h-5 w-5 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
-            </a>
-
-            <a
-              href="#sobre"
-              className="inline-flex items-center gap-2 border-b border-cream/25 pb-1 text-sm text-cream/70 transition hover:border-gold hover:text-gold"
-            >
-              Conheça meu trabalho
+              Agendamento
+              <ArrowUpRight className="h-3.5 w-3.5 text-gold" />
             </a>
           </motion.div>
         </div>
       </motion.div>
 
-      <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3">
+      {/* Scroll indicator */}
+      <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3">
         <span className="text-[0.6rem] uppercase tracking-[0.4em] text-cream/50">Deslize</span>
         <motion.span
-          animate={{ height: [12, 32, 12], opacity: [0.3, 1, 0.3] }}
+          animate={{ height: [12, 28, 12], opacity: [0.3, 1, 0.3] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
           className="w-px bg-gold"
         />
@@ -251,86 +268,142 @@ function Hero() {
 function SectionHeader({ index, children }: { index: string; children: React.ReactNode }) {
   return (
     <div className="mb-14">
-      <p className="mb-4 text-[0.65rem] uppercase tracking-[0.4em] text-gold-deep">{index}</p>
-      <h2 className="max-w-3xl font-display text-3xl leading-tight text-deep sm:text-4xl md:text-5xl">
+      <p className="mb-4 text-[0.65rem] font-medium uppercase tracking-[0.4em] text-gold-deep">{index}</p>
+      <h2 className="max-w-3xl font-display text-3xl font-normal leading-[1.12] tracking-tight text-deep sm:text-4xl md:text-5xl">
         {children}
       </h2>
     </div>
   );
 }
 
-const itens = [
-  { icon: Smile, b: "Dentes desalinhados", t: "ou apinhados, por falta de espaço." },
-  { icon: AlignCenter, b: "Problemas de mordida", t: "que afetam mastigação e desgaste dos dentes." },
-  { icon: Activity, b: "Alterações no desenvolvimento", t: "em crianças e adolescentes, que pedem intervenção no tempo certo." },
-  { icon: Scan, b: "Vergonha de sorrir", t: "em fotos, conversas e no dia a dia." },
-  { icon: Sparkles, b: "Vontade de mudar", t: "mas sem saber qual tratamento é o certo para o seu caso." },
+const itensReconhecimento = [
+  {
+    num: "1",
+    titulo: "Estética & Alinhamento",
+    detalhe: "Dentes desalinhados, apinhados ou com espaços indesejados.",
+  },
+  {
+    num: "2",
+    titulo: "Problemas de Mordida",
+    detalhe: "Desencaixe dos dentes que causa desconforto ao mastigar ou desgaste precoce.",
+  },
+  {
+    num: "3",
+    titulo: "Insegurança ao Sorrir",
+    detalhe: "Hesitação ou desconforto em fotos, reuniões e momentos sociais.",
+  },
 ];
-
-function GanchoItem({ icon: Icon, b, t }: (typeof itens)[number]) {
-  return (
-    <motion.div
-      variants={fadeUp}
-      className="flex items-start gap-4 rounded-2xl border border-deep/10 bg-white/70 p-6 transition hover:-translate-y-1 hover:border-gold/40"
-    >
-      <Icon className="mt-1 h-5 w-5 shrink-0 text-gold-deep" />
-      <p className="text-sm leading-relaxed text-deep-soft">
-        <span className="font-medium text-deep">{b}</span> {t}
-      </p>
-    </motion.div>
-  );
-}
 
 function GanchoSection() {
   return (
-    <section className="bg-cream px-6 py-24 font-sans md:px-10 md:py-32">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeader index="01 — Reconhecimento">
-          Algo no seu sorriso te incomoda?
-        </SectionHeader>
+    <section className="relative bg-cream px-6 py-32 font-sans md:px-10 md:py-48 min-h-[85vh] flex items-center justify-center">
+      <div className="mx-auto max-w-5xl text-center">
+        <span className="mb-3 inline-block text-[0.65rem] font-bold uppercase tracking-[0.35em] text-gold-deep">
+          01 — RECONHECIMENTO
+        </span>
+        <h2 className="mx-auto max-w-3xl font-sans text-3xl font-bold leading-[1.18] tracking-tight text-deep sm:text-4xl md:text-5xl">
+          O que pode estar incomodando <br className="hidden sm:inline" />
+          o seu <span className="font-serif italic font-normal text-gold-deep">sorriso</span>?
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#525f61] md:text-lg">
+          Identificar a causa é o primeiro passo para <strong className="font-semibold text-deep">conquistar o sorriso</strong> que você deseja.
+        </p>
 
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid gap-5 md:grid-cols-3"
-        >
-          {itens.map((i) => (
-            <GanchoItem key={i.b} {...i} />
-          ))}
-        </motion.div>
+        {/* 3 Colunas com Espaçamento Amplo e Palavras-Chave em Negrito */}
+        <div className="mt-16 grid gap-8 text-left md:grid-cols-3">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-3xl border border-deep/10 bg-white/80 p-8 shadow-sm transition hover:shadow-md"
+          >
+            <span className="text-sm font-bold text-gold-deep">1.</span>
+            <h3 className="mt-3 font-sans text-lg font-bold text-deep">Estética & Alinhamento</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#525f61]">
+              Dentes <strong className="font-semibold text-deep">desalinhados</strong>, <strong className="font-semibold text-deep">apinhados</strong> ou com <strong className="font-semibold text-deep">espaços indesejados</strong>.
+            </p>
+          </motion.div>
 
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-14 max-w-2xl text-lg leading-relaxed text-deep-soft"
-        >
-          <span className="font-display text-deep">Quase sempre existe algo maior por trás.</span>{" "}
-          Não é só sobre dentes alinhados: é sobre voltar a se sentir seguro para sorrir, falar e
-          se relacionar. E isso começa com um diagnóstico bem feito.
-        </motion.p>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-3xl border border-deep/10 bg-white/80 p-8 shadow-sm transition hover:shadow-md"
+          >
+            <span className="text-sm font-bold text-gold-deep">2.</span>
+            <h3 className="mt-3 font-sans text-lg font-bold text-deep">Problemas de Mordida</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#525f61]">
+              Desencaixe dos dentes que causa <strong className="font-semibold text-deep">desconforto ao mastigar</strong> ou <strong className="font-semibold text-deep">desgaste precoce</strong>.
+            </p>
+          </motion.div>
 
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-8 inline-flex items-center gap-2 rounded-full bg-deep px-7 py-3.5 text-sm text-cream transition hover:bg-deep-soft"
-        >
-          Quero avaliar meu caso
-          <ArrowUpRight className="h-4 w-4 text-gold" />
-        </a>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-3xl border border-deep/10 bg-white/80 p-8 shadow-sm transition hover:shadow-md"
+          >
+            <span className="text-sm font-bold text-gold-deep">3.</span>
+            <h3 className="mt-3 font-sans text-lg font-bold text-deep">Insegurança ao Sorrir</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#525f61]">
+              Hesitação ou desconforto em <strong className="font-semibold text-deep">fotos</strong>, <strong className="font-semibold text-deep">reuniões</strong> e momentos sociais.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="mt-14">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-3 rounded-full bg-deep px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-cream shadow-md transition hover:bg-deep-soft hover:shadow-lg"
+          >
+            Quero avaliar meu caso
+            <ArrowUpRight className="h-4 w-4 text-gold" />
+          </a>
+        </div>
       </div>
     </section>
   );
 }
 
+const sobreContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.14,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const sobreItemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 85,
+    filter: "blur(14px)",
+    scale: 0.94,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    scale: 1,
+    transition: {
+      duration: 1.15,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+    },
+  },
+};
+
 function SobreSection() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["2%", "14%"]);
   const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.12, 1.04, 1.12]);
 
   const credenciais = [
@@ -349,48 +422,58 @@ function SobreSection() {
       <motion.img
         style={{ y: imageY, scale: imageScale }}
         src={sobreRetrato.url}
-        alt="Dra. Giovanna Francini sentada, sorrindo"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        alt="Dra. Giovanna Francini sentada na cadeira"
+        className="absolute inset-0 h-full w-full object-cover object-[20%_center] md:object-[15%_center]"
       />
-      {/* Sombra / degradê preto carvão profundo (#07080a) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#07080a] via-[#07080a]/90 to-transparent pointer-events-none md:w-4/5" />
+      {/* Sombra / degradê preto carvão profundo (#07080a) focado no lado direito para o texto */}
+      <div className="absolute inset-0 bg-gradient-to-l from-[#07080a] via-[#07080a]/95 to-transparent pointer-events-none md:left-auto md:right-0 md:w-3/5" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#07080a] via-transparent to-[#07080a]/40 pointer-events-none" />
+      {/* Degradê de fusão suave no topo do Sobre com o Hero */}
+      <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#07080a] via-[#07080a]/85 to-transparent pointer-events-none z-10" />
+      {/* Degradê de fusão suave no rodapé do Sobre com o Reconhecimento */}
+      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#07080a] via-[#07080a]/85 to-transparent pointer-events-none z-10" />
 
-      <div className="relative z-10 mx-auto flex min-h-[110svh] max-w-6xl items-center px-6 py-28 md:px-10 md:py-40">
+      <div className="relative z-10 mx-auto flex min-h-[110svh] max-w-6xl items-center justify-end px-6 py-28 md:px-10 md:py-40">
         <motion.div
-          variants={stagger}
+          variants={sobreContainerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="max-w-xl"
+          viewport={{ once: false, amount: 0.25 }}
+          className="ml-auto max-w-xl"
         >
           <motion.p
-            variants={fadeUp}
-            className="mb-5 text-[0.65rem] uppercase tracking-[0.4em] text-gold"
+            variants={sobreItemVariants}
+            className="mb-5 text-[0.65rem] uppercase tracking-[0.4em] text-gold font-bold"
           >
-            02 — Quem sou
+            QUEM SOU
           </motion.p>
           <motion.h2
-            variants={fadeUp}
-            className="font-display text-4xl leading-tight text-cream md:text-5xl"
+            variants={sobreItemVariants}
+            className="font-sans text-4xl font-semibold leading-tight text-cream md:text-5xl"
           >
-            Prazer, sou Giovanna.
+            Prazer, sou <span className="font-serif italic font-normal text-gold">Giovanna</span>.
           </motion.h2>
           <motion.p
-            variants={fadeUp}
+            variants={sobreItemVariants}
             className="mt-6 text-base leading-relaxed text-cream/90"
           >
             Sou cirurgiã-dentista com dedicação especial à Ortodontia. Escolhi essa profissão pela
             possibilidade de cuidar da saúde e, ao mesmo tempo, transformar autoestima e qualidade
             de vida.
           </motion.p>
-          <motion.p variants={fadeUp} className="mt-4 text-base leading-relaxed text-cream/90">
+          <motion.p
+            variants={sobreItemVariants}
+            className="mt-4 text-base leading-relaxed text-cream/90"
+          >
             Meu diferencial está em unir conhecimento técnico, planejamento individualizado e
             proximidade real com o paciente. Cada caso é único — e merece ser tratado como tal,
             com ética, transparência e honestidade sobre o que faz sentido para você.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
+          <motion.div
+            variants={sobreItemVariants}
+            className="mt-10 flex flex-wrap gap-3"
+          >
             {credenciais.map((c) => (
               <span
                 key={c}
@@ -408,99 +491,125 @@ function SobreSection() {
 }
 
 function AbordagemSection() {
-  const beneficios = [
-    "Diagnóstico e planejamento individualizado",
-    "Cada etapa explicada de forma clara",
-    "Atualização constante em novas tecnologias",
-    "Indicação honesta: só o tratamento que faz sentido",
-  ];
-
   return (
-    <section className="bg-sand px-6 py-24 font-sans md:px-10 md:py-32">
-      <div className="mx-auto grid max-w-6xl gap-14 md:grid-cols-2">
-        <div>
-          <p className="mb-4 text-[0.65rem] uppercase tracking-[0.4em] text-gold-deep">
-            Como eu trabalho
-          </p>
-          <h2 className="font-display text-3xl leading-tight text-deep md:text-4xl">
-            Tratamento planejado, humanizado e feito para o seu caso.
-          </h2>
-          <p className="mt-6 text-base leading-relaxed text-deep-soft">
-            Ética, responsabilidade, transparência, respeito e humanização são inegociáveis no meu
-            atendimento. Antes de indicar qualquer aparelho, eu entendo o que você busca e explico
-            o porquê de cada escolha.
-          </p>
-        </div>
+    <section className="bg-sand px-6 py-24 font-sans md:px-10 md:py-36">
+      <div className="mx-auto max-w-5xl text-center">
+        <span className="mb-3 inline-block text-[0.65rem] font-bold uppercase tracking-[0.35em] text-gold-deep">
+          METODOLOGIA & CUIDADO
+        </span>
+        <h2 className="mx-auto max-w-3xl font-sans text-3xl font-bold leading-[1.18] tracking-tight text-deep sm:text-4xl md:text-5xl">
+          Como funciona o seu <br className="hidden sm:inline" />
+          <span className="font-serif italic font-normal text-gold-deep">atendimento</span>
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#525f61] md:text-lg">
+          Tratamento planejado com clareza para você saber exatamente o que <strong className="font-semibold text-deep">esperar de cada etapa</strong>.
+        </p>
 
-        <div className="space-y-4">
-          {beneficios.map((texto, idx) => (
-            <motion.div
-              key={texto}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="flex items-center gap-5 border-b border-deep/10 pb-4"
-            >
-              <span className="font-display text-2xl text-gold-deep">
-                {String(idx + 1).padStart(2, "0")}
-              </span>
-              <p className="text-base text-deep">{texto}</p>
-            </motion.div>
-          ))}
+        {/* 3 Passos Claras com Espaçamento Amplo */}
+        <div className="mt-16 grid gap-8 text-left md:grid-cols-3">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-3xl border border-deep/10 bg-white/90 p-8 shadow-sm transition hover:shadow-md"
+          >
+            <span className="text-sm font-bold text-gold-deep">Passo 1</span>
+            <h3 className="mt-3 font-sans text-lg font-bold text-deep">Consulta Inicial & Diagnóstico</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#525f61]">
+              Conversamos em detalhes sobre <strong className="font-semibold text-deep">suas queixas</strong> e analisamos a <strong className="font-semibold text-deep">saúde da sua boca</strong>.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-3xl border border-deep/10 bg-white/90 p-8 shadow-sm transition hover:shadow-md"
+          >
+            <span className="text-sm font-bold text-gold-deep">Passo 2</span>
+            <h3 className="mt-3 font-sans text-lg font-bold text-deep">Planejamento do Tratamento</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#525f61]">
+              Apresento de forma transparente as <strong className="font-semibold text-deep">melhores opções de aparelhos</strong>, prazos e custos.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-3xl border border-deep/10 bg-white/90 p-8 shadow-sm transition hover:shadow-md"
+          >
+            <span className="text-sm font-bold text-gold-deep">Passo 3</span>
+            <h3 className="mt-3 font-sans text-lg font-bold text-deep">Acompanhamento Contínuo</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#525f61]">
+              Consultas de manutenção no <strong className="font-semibold text-deep">ritmo ideal</strong>, cuidando do seu sorriso do início à contenção.
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 }
 
-const avaliacoes = [
-  "Ortodontia interceptiva",
-  "Planejamento ortodôntico",
-  "Manutenção e contenção",
-  "Clínica geral",
-  "Odontologia Legal",
-];
-
-const beneficios = [
-  { b: "Saúde", t: "mordida equilibrada e prevenção de desgastes e problemas futuros." },
-  { b: "Função", t: "mastigação e fala mais confortáveis no dia a dia." },
-  { b: "Estética", t: "harmonia entre dentes, sorriso e rosto." },
-  { b: "Conforto", t: "tratamento no seu ritmo, com etapas previsíveis." },
-  { b: "Confiança", t: "para sorrir, falar e se relacionar sem se esconder." },
-];
-
 function BeneficiosSection() {
   return (
-    <section className="bg-cream px-6 py-24 font-sans md:px-10 md:py-32">
-      <div className="mx-auto max-w-6xl">
-        <h2 className="max-w-2xl font-display text-3xl leading-tight text-deep md:text-5xl">
-          Muito mais do que
-          <span className="block text-gold-deep">uma mudança estética.</span>
+    <section className="bg-cream px-6 py-24 font-sans md:px-10 md:py-36">
+      <div className="mx-auto max-w-5xl text-center">
+        <span className="mb-3 inline-block text-[0.65rem] font-bold uppercase tracking-[0.35em] text-gold-deep">
+          O QUE VOCÊ GANHA
+        </span>
+        <h2 className="mx-auto max-w-3xl font-sans text-3xl font-bold leading-[1.18] tracking-tight text-deep sm:text-4xl md:text-5xl">
+          O que você conquista com o <br className="hidden sm:inline" />
+          <span className="font-serif italic font-normal text-gold-deep">tratamento</span>
         </h2>
-        <p className="mt-6 text-[0.65rem] uppercase tracking-[0.4em] text-deep-soft">
-          O que você ganha
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#525f61] md:text-lg">
+          Resultados que vão além dos dentes alinhados e <strong className="font-semibold text-deep">impactam sua qualidade de vida</strong>.
         </p>
 
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-10 grid gap-5 md:grid-cols-3"
-        >
-          {beneficios.map((i) => (
-            <motion.div
-              key={i.b}
-              variants={fadeUp}
-              className="rounded-2xl border border-deep/10 bg-white/70 p-7"
-            >
-              <p className="text-base leading-relaxed text-deep-soft">
-                <span className="font-display text-xl text-deep">{i.b}</span> {i.t}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* 3 Cartões Diretos com Destaques em Negrito */}
+        <div className="mt-16 grid gap-8 text-left md:grid-cols-3">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-3xl border border-gold/25 bg-[#f5f0e8] p-8 shadow-sm transition hover:shadow-md"
+          >
+            <h3 className="font-sans text-lg font-bold text-deep">Saúde Mastigatória</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#525f61]">
+              Proteção dos dentes e <strong className="font-semibold text-deep">mastigação confortável</strong> sem dores ou desgastes.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-3xl border border-gold/25 bg-[#f5f0e8] p-8 shadow-sm transition hover:shadow-md"
+          >
+            <h3 className="font-sans text-lg font-bold text-deep">Estética Natural</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#525f61]">
+              Dentes alinhados e um <strong className="font-semibold text-deep">sorriso em sintonia natural</strong> com o seu rosto.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-3xl border border-gold/25 bg-[#f5f0e8] p-8 shadow-sm transition hover:shadow-md"
+          >
+            <h3 className="font-sans text-lg font-bold text-deep">Confiança no Dia a Dia</h3>
+            <p className="mt-3 text-sm leading-relaxed text-[#525f61]">
+              Liberdade para <strong className="font-semibold text-deep">sorrir, falar em reuniões</strong>, fotos e momentos sociais com segurança.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -566,8 +675,8 @@ function CTASection() {
       <div className="relative z-10 mx-auto flex min-h-[420px] max-w-3xl items-end justify-center py-16 text-center md:min-h-[520px] md:py-24">
         <div className="max-w-md space-y-4">
           <p className="text-[0.65rem] uppercase tracking-[0.35em] text-gold/90">Seu sorriso merece cuidado</p>
-          <h2 className="font-display text-2xl leading-tight text-white md:text-3xl">
-            Comece pelo diagnóstico certo.
+          <h2 className="font-display text-2xl font-normal leading-tight text-white md:text-3xl">
+            Comece pelo <span className="font-normal italic text-gold">diagnóstico certo</span>.
           </h2>
           <p className="text-sm leading-relaxed text-cream/80">
             Avaliação clara, planejamento individual e sorriso com mais confiança.
@@ -591,11 +700,11 @@ function Home() {
   return (
     <main>
       <Hero />
-      <GanchoSection />
       <SobreSection />
+      <GanchoSection />
+      <ServicosSection />
       <AbordagemSection />
       <BeneficiosSection />
-      <ServicosSection />
       <FAQSection />
       <CTASection />
     </main>

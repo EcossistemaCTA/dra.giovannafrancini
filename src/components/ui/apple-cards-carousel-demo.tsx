@@ -1,8 +1,12 @@
 "use client";
 
 import { Card, Carousel, type CarouselItem } from "@/components/ui/apple-cards-carousel";
-import aparelhoFixoImg from "@/assets/aparelho-fixo.png.asset.json";
-import alinhadoresImg from "@/assets/alinhadores.png.asset.json";
+import aparelhoFixoImg from "@/assets/aparelho-fixo.jpg";
+import alinhadoresImg from "@/assets/alinhadores.jpg";
+import ortopedistaImg from "@/assets/ortopedista.jpg";
+import diagnosticoImg from "@/assets/diagnostico.jpg";
+import interceptacaoImg from "@/assets/interceptacao.jpg";
+import manutencaoImg from "@/assets/manutencao.jpg";
 
 const treatmentContent = (
   title: string,
@@ -30,7 +34,7 @@ const data: CarouselItem[] = [
   {
     category: "Aparelho fixo",
     title: "Sorriso alinhado",
-    src: aparelhoFixoImg.url,
+    src: aparelhoFixoImg,
     content: treatmentContent(
       "Aparelho fixo",
       "Correção da mordida, do espaço e do alinhamento com acompanhamento firme e personalizado em cada etapa do tratamento.",
@@ -44,7 +48,7 @@ const data: CarouselItem[] = [
   {
     category: "Alinhadores",
     title: "Discrição e conforto",
-    src: alinhadoresImg.url,
+    src: alinhadoresImg,
     content: treatmentContent(
       "Alinhadores transparentes",
       "Uma alternativa discreta para quem busca conforto, estética e previsibilidade, com etapas claras do início ao fim.",
@@ -58,6 +62,7 @@ const data: CarouselItem[] = [
   {
     category: "Ortopedista",
     title: "Crescimento guiado",
+    src: ortopedistaImg,
     content: treatmentContent(
       "Aparelho ortopédico",
       "Atuação na fase de crescimento para orientar o desenvolvimento da arcada e reduzir a necessidade de intervenções mais complexas depois.",
@@ -72,6 +77,7 @@ const data: CarouselItem[] = [
   {
     category: "Diagnóstico",
     title: "Plano individualizado",
+    src: diagnosticoImg,
     content: treatmentContent(
       "Planejamento ortodôntico",
       "Análise clínica e documental para que cada decisão seja baseada em diagnóstico, objetivos e conforto do paciente.",
@@ -86,6 +92,7 @@ const data: CarouselItem[] = [
   {
     category: "Interceptação",
     title: "Tempo certo",
+    src: interceptacaoImg,
     content: treatmentContent(
       "Ortodontia interceptiva",
       "Intervenção estratégica na infância e adolescência para prevenir problemas maiores, com mais qualidade de vida e menos complexidade no futuro.",
@@ -100,6 +107,7 @@ const data: CarouselItem[] = [
   {
     category: "Manutenção",
     title: "Resultado estável",
+    src: manutencaoImg,
     content: treatmentContent(
       "Acompanhamento e contenção",
       "Cuidados de manutenção para preservar o resultado final, garantir estabilidade e manter o sorriso saudável a longo prazo.",
@@ -117,20 +125,22 @@ export default function AppleCardsCarouselDemo() {
   const cards = data.map((card, index) => <Card key={card.title} card={card} index={index} />);
 
   return (
-    <section className="bg-sand px-6 py-24 font-sans md:px-10 md:py-32">
-      <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl">
-          <p className="text-[0.65rem] uppercase tracking-[0.4em] text-gold-deep">Tratamentos</p>
-          <h2 className="mt-4 font-display text-3xl leading-tight text-deep md:text-5xl">
-            Ortodontia pensada para cada etapa da sua vida.
+    <section className="bg-sand px-6 py-24 font-sans md:px-10 md:py-36">
+      <div className="mx-auto max-w-5xl">
+        <div className="text-center">
+          <span className="mb-3 inline-block text-[0.65rem] font-bold uppercase tracking-[0.35em] text-gold-deep">
+            ESPECIALIDADES & TRATAMENTOS
+          </span>
+          <h2 className="mx-auto max-w-3xl font-sans text-3xl font-bold leading-[1.18] tracking-tight text-deep sm:text-4xl md:text-5xl">
+            Ortodontia pensada para <br className="hidden sm:inline" />
+            <span className="font-serif italic font-normal text-gold-deep">cada etapa</span> da sua vida.
           </h2>
-          <p className="mt-4 text-base text-deep-soft">
-            Diagnóstico sincero, planejamento individualizado e opções de tratamento para crianças,
-            adolescentes e adultos.
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#525f61] md:text-lg">
+            Diagnóstico sincero, planejamento individualizado e <strong className="font-semibold text-deep">opções de tratamento sob medida</strong> para crianças, adolescentes e adultos.
           </p>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-16">
           <Carousel items={cards} />
         </div>
       </div>
